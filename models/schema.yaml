@@ -13,7 +13,7 @@ sources:
             tests:
               - unique
               - not_null
-      - name: demographics
+      - name: demographic
         columns:
           - name: _airbyte_demographics_hashid
             description: Hash column based on the values in the record
@@ -41,7 +41,7 @@ models:
     config:
       materialized: view
   
-  - name: base_demographics
+  - name: base_demographic
     config:
       materialized: view
     columns:
@@ -67,5 +67,5 @@ models:
       - name: location_key
         tests:
           - relationship:
-            to: ref('base_index')
-            field: location_key
+              to: ref('base_index')
+              field: location_key
